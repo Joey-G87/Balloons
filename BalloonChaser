@@ -1,0 +1,36 @@
+Chaser chaser;
+Balloon[] b = new Balloon[100];
+World world;
+
+public void setup() {
+  size(600,600);
+  world = new World();
+  chaser = new Chaser();
+  spawnBalloons();
+  world.show();
+}
+
+public void draw() {
+  background(220);
+  world.show();
+  
+  for (int i = 0; i < b.length; i++) {
+    if(b[i].active = true) {
+      
+  b[i].canMove(world);
+  b[i].move();
+  b[i].draw();
+    }
+  }
+  chaser.move();
+  chaser.draw();
+  chaser.chase(b);
+  chaser.target(b);
+}
+
+public void spawnBalloons() {
+  for(int i = 0; i <b.length; i++) {
+  b[i] = new Balloon();
+  b[i].draw();
+  }
+}
