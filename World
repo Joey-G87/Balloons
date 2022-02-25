@@ -1,0 +1,9 @@
+public class World {
+  private PVector pos, size;
+  private final int MARGIN = 30;
+  
+  public void show() {
+    size = new PVector(width-MARGIN*2,height-MARGIN*2);
+    pos = new PVector(MARGIN,MARGIN);
+  }
+} 
